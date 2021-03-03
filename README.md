@@ -54,6 +54,19 @@ https://www.thehumblelab.com/kind-and-metallb-on-mac/
 
 Too bad he works for Kong... 
 
+Additional notes:
+
+1. How to list static routes on Mac
+    ```
+    netstat -rn
+    ```
+
+    Also
+
+    ```
+    netstat -rn | grep tap1
+    ```
+
 ---------------------------------------------------------------
 
 docker-tuntap-osx
