@@ -1,3 +1,49 @@
+## Updated to install MetalLB on Kind
+
+#### Install this tap (see instructions below)
+#### Run the following to replace hyperkit with this:
+
+```bash
+./sbin/docker_tap_install.sh
+```
+
+#### Verify tap is there
+
+ifconfig | grep "tap"
+
+#### Tap up
+
+```
+./sbin/docker_tap_up.sh
+```
+
+#### Check tap1
+
+```
+ifconfig
+```
+
+#### Bring up Kind
+
+kind create cluster --name foo
+
+#### Add static route:
+
+./create-static-route.sh
+
+
+#### Install metallab
+
+./install-metallb.sh
+
+
+Many thanks to Cody De Arkland
+https://www.thehumblelab.com/kind-and-metallb-on-mac/
+
+Too bad he works for Kong :(
+
+---------------------------------------------------------------
+
 docker-tuntap-osx
 ================
 docker-tuntap-osx is a tuntap support shim installer for Docker for Mac.
