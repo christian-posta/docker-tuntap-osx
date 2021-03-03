@@ -1,46 +1,58 @@
-## Updated to install MetalLB on Kind
+## Updated to install MetalLB on Kind, my steps:
 
-#### Install this tap (see instructions below)
-#### Run the following to replace hyperkit with this:
+1. Install `tuntap`
+    
+    brew install --cask tuntap
 
-```bash
-./sbin/docker_tap_install.sh
-```
+    brew install --cask tuntap
+2. Turn off Docker for Mac
+3. Run the following to replace hyperkit with this:
 
-#### Verify tap is there
+    ```bash
+    ./sbin/docker_tap_install.sh
+    ```
+4. Check the tap is there
 
-ifconfig | grep "tap"
+    ```
+    ifconfig | grep "tap"
+    ```
 
-#### Tap up
+5. Tap up
 
-```
-./sbin/docker_tap_up.sh
-```
+    ```
+    ./sbin/docker_tap_up.sh
+    ```
 
-#### Check tap1
+6. Check tap1 has an ip addr
 
-```
-ifconfig
-```
+    ```
+    ifconfig
+    ```
 
-#### Bring up Kind
+7. Bring up Kind
 
-kind create cluster --name foo
+    ```
+    kind create cluster --name istio-workshop
+    ```
 
-#### Add static route:
+8. Add static route:
 
-./create-static-route.sh
+    ```
+    ./create-static-route.sh
+    ```
 
 
-#### Install metallab
+9. Install metallab
 
-./install-metallb.sh
+    ```
+    ./install-metallb.sh
+    ```
 
 
 Many thanks to Cody De Arkland
 https://www.thehumblelab.com/kind-and-metallb-on-mac/
 
-Too bad he works for Kong :(
+Too bad he works for Kong... 
 
 ---------------------------------------------------------------
 
